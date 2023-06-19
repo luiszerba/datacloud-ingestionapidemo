@@ -62,18 +62,32 @@ class DataFactory {
         const currentTime = new Date().getTime();
         const maxTimeAhead = 24 * 60 * 60 * 1000;
 
+        const fullNameMap = new Map();
+
         for (let i = 0; i < numOfEntries; i++) {
             const randomTimeOffset = Math.random() * maxTimeAhead;
             const randomDate = new Date(currentTime + randomTimeOffset).toISOString();
 
+            const fullName = this.getRandomElement(this.contacts);
+            const [firstName, lastName] = fullName.split(' ');
+
+            let identifier;
+            if (fullNameMap.has(fullName)) {
+                identifier = fullNameMap.get(fullName);
+            } else {
+                identifier = Math.random().toString().substring(2, 13);
+                fullNameMap.set(fullName, identifier);
+            }
+
             const entry = {
                 blocked: Math.random() < 0.5 ? "Yes" : "No",
                 city: this.getRandomElement(this.cities),
-                cpf: Math.floor(Math.random() * 90000000000) + 10000000000,
+                cpf: identifier.toString().padStart(11, "0").substring(0, 11),
                 date: randomDate,
-                name: this.getRandomElement(this.contacts),
+                first_name: firstName,
+                last_name: lastName,
                 purchase_category: this.getRandomElement(this.purchaseCategories),
-                transaction_id: (i + 1) * 100,
+                transaction_id: (i + 1) * 1000000,
                 value: Number((Math.random() * 10000).toFixed(2)),
                 virtual_transaction: Math.random() < 0.5 ? "Yes" : "No",
                 with_installments: Math.random() < 0.5 ? "Yes" : "No"
