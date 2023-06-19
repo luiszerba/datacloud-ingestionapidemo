@@ -87,7 +87,7 @@ class DataFactory {
                 first_name: firstName,
                 last_name: lastName,
                 purchase_category: this.getRandomElement(this.purchaseCategories),
-                transaction_id: (i + 1) * 1000000,
+                transaction_id: "T-"+(i + 1) * 1000000,
                 value: Number((Math.random() * 10000).toFixed(2)),
                 virtual_transaction: Math.random() < 0.5 ? "Yes" : "No",
                 with_installments: Math.random() < 0.5 ? "Yes" : "No"
