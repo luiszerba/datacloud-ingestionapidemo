@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste da API de Ingestion</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Teste da API de Ingestion</h1>
+    <form action="/sendPayload" method="post">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" class="form-control" id="username" name="username" value="">
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" class="form-control" id="password" name="password" value="">
+      </div>
+
+      <div class="mb-3">
+        <label for="clientID" class="form-label">ClientID (ConnectedAPP):</label>
+        <input type="text" class="form-control" id="clientID" name="clientID" value="">
+      </div>
+
+      <div class="mb-3">
+        <label for="clientSecret" class="form-label">Client Secret:</label>
+        <input type="text" class="form-control" id="clientSecret" name="clientSecret" value="">
+      </div>
+
+      <div class="mb-3">
+        <label for="orgDomain" class="form-label">Org Domain:</label>
+        <input type="text" class="form-control" id="orgDomain" name="orgDomain" value="">
+      </div>
+
+      <div class="mb-3">
+        <label for="dataCloudEndpoint" class="form-label">Data Cloud Endpoint:</label>
+        <input type="text" class="form-control" id="dataCloudEndpoint" name="dataCloudEndpoint" value="">
+      </div>
+
+      <div class="mb-3">
+        <label for="quantidadeMensagens" class="form-label">Quantidade Mensagens:</label>
+        <input type="number" class="form-control" id="quantidadeMensagens" name="quantidadeMensagens" value="40" style="max-width: 200px;">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+
+  <!-- Include Bootstrap JS (optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
