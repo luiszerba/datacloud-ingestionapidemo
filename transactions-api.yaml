@@ -1,0 +1,27 @@
+openapi: 3.0.3
+components:
+  schemas:
+    array-transacoes:
+      type: object
+      properties:
+        blocked:
+          type: string
+        city:
+          type: string
+        cpf:
+          type: string
+        date:
+          type: string
+          format: date-time
+        with_installments:
+          type: string
+        purchase_category:
+          type: string
+        transaction_id:
+          type: string
+        value:
+          type: number
+        virtual_transaction:
+          type: string
+        name:
+          type: string
